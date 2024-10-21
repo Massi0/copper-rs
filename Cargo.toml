@@ -26,6 +26,7 @@ members = [
     "examples/cu_rp_balancebot",
     "examples/cu_multisources",
     "examples/cu_monitoring",
+    "examples/hello_world"
 ]
 
 # put only the core crates here that are not platform specific

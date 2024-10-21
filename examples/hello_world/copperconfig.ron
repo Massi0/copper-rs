@@ -1,0 +1,23 @@
+// A sample configuration to get you started.
+(
+    tasks: [
+        (
+            id: "src",
+            type: "tasks::Source",
+        ),
+        (
+            id: "task",
+            type: "tasks::GeneratePrime",
+        ),
+        (
+            id: "sink",
+            type: "tasks::Sink",
+        ),
+     ],
+    // Makes a connection from the source to the task and from the task to the sink.
+    cnx: [
+        (src: "src",  dst: "task",   msg: "tasks::IntRange"),
+        (src: "task",  dst: "sink",   msg: "tasks::IntList"),
+    ],
+)
+
