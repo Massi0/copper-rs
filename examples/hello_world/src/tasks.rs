@@ -130,11 +130,17 @@ impl<'cl> CuSinkTask<'cl> for Sink {
     type Input = input_msg!('cl, IntList);
 
     fn process(&mut self, _clock: &RobotClock, input: Self::Input) -> CuResult<()> {
-        let prime_numbers = input.payload().unwrap().value.clone();
+        let prime_numbers = &input.payload().unwrap().value;
+
+        let numbers_str = prime_numbers
+            .iter() // Iterate over the vector
+            .map(|n| n.to_string()) // Convert each element to a string
+            .collect::<Vec<String>>() // Collect into a Vec<String>
+            .join(", ");
         debug!(
-            "Prime numbers size:{}, values: {:?}",
+            "Prime numbers size:{}, values: {}",
             prime_numbers.len(),
-            prime_numbers
+            numbers_str
         );
         Ok(())
     }

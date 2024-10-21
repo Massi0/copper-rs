@@ -27,3 +27,5 @@ cu29-unifiedlog = { git = "https://github.com/copper-project/copper-rs.git" }
 cu29-export = { git = "https://github.com/copper-project/copper-rs.git" }
 
 bincode = { version = "2.0.0-rc.3", features = ["derive"] }
+
+ctrlc = "3.4.5"
