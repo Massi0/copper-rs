@@ -19,5 +19,9 @@
         (src: "src",  dst: "task",   msg: "tasks::IntRange"),
         (src: "task",  dst: "sink",   msg: "tasks::IntList"),
     ],
+    monitor: (
+        type: "cu_consolemon::CuConsoleMon",
+        config: {"file": "copperconfig.ron"},
+    )
 )
 

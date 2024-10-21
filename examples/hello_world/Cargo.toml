@@ -16,16 +16,19 @@ path = "src/logreader.rs"
 
 [dependencies]
 # FIXME: This is to be able to test pre-release.
-cu29 = { git = "https://github.com/copper-project/copper-rs.git" }
-cu29-traits = { git = "https://github.com/copper-project/copper-rs.git" }
-cu29-derive = { git = "https://github.com/copper-project/copper-rs.git" }
-cu29-helpers = { git = "https://github.com/copper-project/copper-rs.git" }
-cu29-log = { git = "https://github.com/copper-project/copper-rs.git" }
-cu29-log-runtime = { git = "https://github.com/copper-project/copper-rs.git" }
-cu29-log-derive = { git = "https://github.com/copper-project/copper-rs.git" }
-cu29-unifiedlog = { git = "https://github.com/copper-project/copper-rs.git" }
-cu29-export = { git = "https://github.com/copper-project/copper-rs.git" }
+cu29 = { workspace = true }
+cu29-traits = { workspace = true }
+cu29-derive = { workspace = true }
+cu29-helpers = { workspace = true }
+cu29-log = { workspace = true }
+cu29-log-runtime = { workspace = true }
+cu29-log-derive = { workspace = true }
+cu29-unifiedlog = { workspace = true }
 
-bincode = { version = "2.0.0-rc.3", features = ["derive"] }
+cu29-export = { workspace = true }
+bincode = { workspace = true }
+cu-consolemon = { path = "../../components/monitors/cu_consolemon", version = "0.3.1"}
 
 ctrlc = "3.4.5"
+
+

@@ -7,7 +7,11 @@ RUN apt update \
 	curl \ 
 	build-essential \
 	pkg-config \
-	libudev-dev
+	libudev-dev \
+	ca-certificates \
+	python3
+
+
 
 # Install cargo
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y

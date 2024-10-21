@@ -1,6 +1,5 @@
 pub mod tasks;
 
-use cu29::clock::CuDuration;
 use cu29_derive::copper_runtime;
 use cu29_helpers::basic_copper_setup;
 use cu29_log_derive::debug;
@@ -26,11 +25,9 @@ fn run_loop(
     })
     .expect("Error setting Ctrl-C handler");
 
-    let loop_start_time = clock.now();
+    application.start_all_tasks()?;
 
-    while !STOP_FLAG.load(Ordering::SeqCst)
-        && (clock.now() - loop_start_time) < CuDuration::from(Duration::from_millis(2))
-    {
+    while !STOP_FLAG.load(Ordering::SeqCst) {
         application.run_one_iteration()?;
     }
 

@@ -101,7 +101,7 @@ impl<'cl> CuTask<'cl> for GeneratePrime {
         output: Self::Output,
     ) -> CuResult<()> {
         let (start, end) = input.payload().unwrap().clone().unwrap();
-        debug!("Received message: [{}-{}]", start, end);
+        // debug!("Received message: [{}-{}]", start, end);
         output.set_payload(IntList {
             value: primes_between(start, end),
         });
@@ -137,11 +137,11 @@ impl<'cl> CuSinkTask<'cl> for Sink {
             .map(|n| n.to_string()) // Convert each element to a string
             .collect::<Vec<String>>() // Collect into a Vec<String>
             .join(", ");
-        debug!(
-            "Prime numbers size:{}, values: {}",
-            prime_numbers.len(),
-            numbers_str
-        );
+        // debug!(
+        //     "Prime numbers size:{}, values: {}",
+        //     prime_numbers.len(),
+        //     numbers_str
+        // );
         Ok(())
     }
 }
